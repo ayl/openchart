@@ -1,8 +1,8 @@
 {
-  "when": "2026-09-26T14:45:47.388Z",
+  "when": "2026-10-03T16:04:35.202Z",
   "selftest": false,
   "approve": false,
-  "passed": 64,
+  "passed": 94,
   "failed": 0,
   "hard": 0,
   "reviewable": 0,
@@ -374,6 +374,216 @@
     },
     {
       "what": "reciprocal: zoom/selection/export-preview do not mutate the document",
+      "ok": true,
+      "detail": "",
+      "status": "pass",
+      "kind": "hard"
+    },
+    {
+      "what": "routing-branches: loaded document identity matches the fixture",
+      "ok": true,
+      "detail": "",
+      "status": "pass",
+      "kind": "hard"
+    },
+    {
+      "what": "routing-branches zoom 0.5 pixels match the baseline",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "routing-branches zoom 1 pixels match the baseline",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "routing-branches zoom 2 pixels match the baseline",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "routing-branches: real selection updates the inspector heading",
+      "ok": true,
+      "detail": "{\"sel\":1,\"title\":\"Decision\"}",
+      "status": "pass",
+      "kind": "hard"
+    },
+    {
+      "what": "routing-branches selected pixels [match]",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "routing-branches: deselection returns the inspector to the document view",
+      "ok": true,
+      "detail": "\"Document\"",
+      "status": "pass",
+      "kind": "hard"
+    },
+    {
+      "what": "routing-branches deselected pixels [match]",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "routing-branches export preview pixels [match]",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "routing-branches: zoom/selection/export-preview do not mutate the document",
+      "ok": true,
+      "detail": "",
+      "status": "pass",
+      "kind": "hard"
+    },
+    {
+      "what": "routing-capacity: loaded document identity matches the fixture",
+      "ok": true,
+      "detail": "",
+      "status": "pass",
+      "kind": "hard"
+    },
+    {
+      "what": "routing-capacity zoom 0.5 pixels match the baseline",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "routing-capacity zoom 1 pixels match the baseline",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "routing-capacity zoom 2 pixels match the baseline",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "routing-capacity: real selection updates the inspector heading",
+      "ok": true,
+      "detail": "{\"sel\":1,\"title\":\"Process\"}",
+      "status": "pass",
+      "kind": "hard"
+    },
+    {
+      "what": "routing-capacity selected pixels [match]",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "routing-capacity: deselection returns the inspector to the document view",
+      "ok": true,
+      "detail": "\"Document\"",
+      "status": "pass",
+      "kind": "hard"
+    },
+    {
+      "what": "routing-capacity deselected pixels [match]",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "routing-capacity export preview pixels [match]",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "routing-capacity: zoom/selection/export-preview do not mutate the document",
+      "ok": true,
+      "detail": "",
+      "status": "pass",
+      "kind": "hard"
+    },
+    {
+      "what": "routing-reciprocal-hub: loaded document identity matches the fixture",
+      "ok": true,
+      "detail": "",
+      "status": "pass",
+      "kind": "hard"
+    },
+    {
+      "what": "routing-reciprocal-hub zoom 0.5 pixels match the baseline",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "routing-reciprocal-hub zoom 1 pixels match the baseline",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "routing-reciprocal-hub zoom 2 pixels match the baseline",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "routing-reciprocal-hub: real selection updates the inspector heading",
+      "ok": true,
+      "detail": "{\"sel\":1,\"title\":\"Process\"}",
+      "status": "pass",
+      "kind": "hard"
+    },
+    {
+      "what": "routing-reciprocal-hub selected pixels [match]",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "routing-reciprocal-hub: deselection returns the inspector to the document view",
+      "ok": true,
+      "detail": "\"Document\"",
+      "status": "pass",
+      "kind": "hard"
+    },
+    {
+      "what": "routing-reciprocal-hub deselected pixels [match]",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "routing-reciprocal-hub export preview pixels [match]",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "routing-reciprocal-hub: zoom/selection/export-preview do not mutate the document",
       "ok": true,
       "detail": "",
       "status": "pass",

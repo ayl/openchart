@@ -673,3 +673,106 @@ test("P01: frame instrumentation retires cancelled IDs and excludes measurement 
   ctx.__measureRaf(() => {});
   assert.equal(ctx.__rafPending, 0);
 });
+
+/* ===== S04: export the build stages as SVG (vector, one file per stage) ===== */
+
+function zipEntries(buf) {
+  /* The app writes STORE-entry zips (method 0), so entries parse directly. */
+  const out = [];
+  let at = 0;
+  while (at + 30 <= buf.length) {
+    if (
+      buf[at] === 0x50 && buf[at + 1] === 0x4b && buf[at + 2] === 3 && buf[at + 3] === 4
+    ) {
+      const nlen = buf[at + 26] | (buf[at + 27] << 8);
+      const elen = buf[at + 28] | (buf[at + 29] << 8);
+      const size =
+        buf[at + 18] | (buf[at + 19] << 8) | (buf[at + 20] << 16) | (buf[at + 21] << 24);
+      const name = Buffer.from(buf.slice(at + 30, at + 30 + nlen)).toString("utf8");
+      const start = at + 30 + nlen + elen;
+      out.push({ name, data: Buffer.from(buf.slice(start, start + size)) });
+      at = start + size;
+    } else {
+      at++;
+    }
+  }
+  return out;
+}
+
+test("S04: svg sequence export writes one vector file per stage, no rasterization", async () => {
+  const e = fixture();
+  story(e);
+  await e.run("openSequence()");
+  e.run('$("#sequence-format").value="svg"');
+  e.run(
+    "let saved=[];download=(name,content,type)=>{saved.push({name:name,content:content,type:type})};" +
+      "rasterizeSVG=()=>{throw new Error('rasterized-by-accident')};",
+  );
+  const before = e.run("snapshot()");
+  const hist = e.run("history.length");
+  await drainExport(e, e.run("exportSequence()"));
+  assert.equal(e.run("saved.length"), 1, "exactly one ZIP download");
+  const dl = JSON.parse(e.run("JSON.stringify({name:saved[0].name,type:saved[0].type})"));
+  assert.match(dl.name, /-build\.zip$/, "the staged SVG export ships as a ZIP");
+  assert.equal(dl.type, "application/zip");
+  assert.doesNotMatch(
+    e.document.querySelector("#sequence-status").textContent,
+    /rasterized-by-accident/,
+    "vector frames never touch the raster path",
+  );
+  const entries = zipEntries(e.run("saved[0].content"));
+  const names = entries.map((x) => x.name);
+  assert.equal(entries.length, 4, "three stage files plus manifest");
+  assert.equal(names.filter((n) => n.endsWith(".svg")).length, 3);
+  assert.ok(names.includes("manifest.json"));
+  const svgs = entries
+    .filter((x) => x.name.endsWith(".svg"))
+    .sort((p, q) => (p.name < q.name ? -1 : 1));
+  for (const [i, f] of svgs.entries()) {
+    const text = f.data.toString("utf8");
+    const frame = e.run("stageFrame(sequenceScene," + (i + 1) + ")");
+    assert.equal(text, frame, "stage file " + (i + 1) + " is the exact frame SVG");
+    assert.ok(text.startsWith("<svg"), "standalone SVG document");
+    assert.ok(text.endsWith("</svg>"));
+  }
+  assert.equal(svgs[0].data.toString("utf8").includes("Result"), false, "stage 1 excludes later objects");
+  assert.equal(svgs[2].data.toString("utf8").includes("Result"), true, "stage 3 is cumulative");
+  const manifest = JSON.parse(
+    entries.find((x) => x.name === "manifest.json").data.toString("utf8"),
+  );
+  assert.equal(manifest.vector, true, "manifest records vector output");
+  assert.equal(manifest.rasterPDF, false);
+  assert.equal(manifest.width, e.run("sequenceScene.width"));
+  assert.equal(manifest.height, e.run("sequenceScene.height"));
+  assert.equal(manifest.stages.length, 3);
+  assert.ok(manifest.stages.every((s) => s.file.endsWith(".svg")));
+  assert.equal(e.run("snapshot()"), before, "export never mutates the document");
+  assert.equal(e.run("history.length"), hist, "export records no undo step");
+});
+
+test("S04: svg format adjusts the dialog and honors subrange plus JSON", async () => {
+  const e = fixture();
+  story(e);
+  await e.run("openSequence()");
+  e.run('$("#sequence-format").value="svg";refreshSequencePreview()');
+  assert.equal(e.document.querySelector("#sequence-page").disabled, true, "no PDF page size for vector files");
+  assert.equal(e.document.querySelector("#sequence-json").disabled, false, "editable JSON stays available");
+  assert.equal(e.document.querySelector("#sequence-download").textContent, "Download ZIP");
+  const counts = e.document.querySelector("#sequence-counts").textContent;
+  assert.match(counts, /· vector/);
+  assert.match(counts, new RegExp("fixed output " + e.run("sequenceScene.width") + " × " + e.run("sequenceScene.height")));
+  e.run('$("#sequence-format").value="png";refreshSequencePreview()');
+  assert.equal(e.document.querySelector("#sequence-page").disabled, true, "page size stays pdf-only");
+  e.run('$("#sequence-format").value="svg";$("#sequence-first").value="2";$("#sequence-last").value="3";$("#sequence-json").checked=true');
+  e.run("let saved=[];download=(name,content,type)=>{saved.push({name:name,content:content})}");
+  await drainExport(e, e.run("exportSequence()"));
+  const entries = zipEntries(e.run("saved[0].content"));
+  const svgNames = entries.map((x) => x.name).filter((n) => n.endsWith(".svg"));
+  assert.equal(svgNames.length, 2, "From/Through subrange exports two stages");
+  assert.ok(entries.some((x) => x.name === "manifest.json"));
+  const editable = entries.find((x) => x.name.endsWith("-editable.json"));
+  assert.ok(editable, "opt-in editable JSON rides along");
+  assert.equal(editable.data.toString("utf8"), e.run("snapshot()"));
+  const manifest = JSON.parse(entries.find((x) => x.name === "manifest.json").data.toString("utf8"));
+  assert.deepEqual(manifest.stages.map((s) => s.index), [2, 3]);
+});

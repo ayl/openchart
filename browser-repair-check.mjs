@@ -909,6 +909,51 @@ assert(blankW.ink < 100, "V02: opaque-white blank control fails the ink check", 
     );
     await sleep(90);
   }
+  /* S04: staged SVG export - vector files in a ZIP, no raster pass. */
+  {
+    await page.eval(
+      "(function(){ state.nodes={};state.edges={};state.order=[];state.sel.clear();history=[];future=[];" +
+      "window.__s1=makeNode('rect',260,200);__s1.text='First';window.__s2=makeNode('rect',520,200);__s2.text='Second';" +
+      "const st=addBuildStage('Intro');assignBuildStage([__s1.id],st);routeAll();routesDirty=false;render(); })()",
+    );
+    await sleep(160);
+    const st = JSON.parse(
+      await page.eval(
+        "(async function(){ await openSequence(); return JSON.stringify({ stages: sequenceScene.stages.length }); })()",
+      ),
+    );
+    assert(
+      st.stages >= 1,
+      "S04 browser: build stages exist for the sequence",
+      JSON.stringify(st),
+    );
+    const dl = JSON.parse(
+      await page.eval(
+        "(async function(){ window.__origDownload=download; download=(n,c,t)=>{window.__dl={name:n,type:t,bytes:c.length};};" +
+        "document.querySelector('#sequence-format').value='svg'; await exportSequence();" +
+        "return JSON.stringify({ dl: window.__dl, status: document.querySelector('#sequence-status').textContent, pageDisabled: document.querySelector('#sequence-page').disabled }); })()",
+      ),
+    );
+    assert(
+      dl.dl && /-build\.zip$/.test(dl.dl.name) && dl.dl.type === "application/zip",
+      "S04 browser: staged SVG export downloads a ZIP",
+      JSON.stringify(dl),
+    );
+    assert(
+      /Downloaded/.test(dl.status),
+      "S04 browser: the export reports success",
+      JSON.stringify(dl),
+    );
+    assert(
+      dl.pageDisabled === true,
+      "S04 browser: PDF page size is inactive for vector output",
+      JSON.stringify(dl),
+    );
+    await page.eval(
+      "(function(){ download=window.__origDownload; document.querySelector('#sequence-dialog').close(); state.nodes={};state.edges={};state.order=[];state.sel.clear();history=[];future=[];routeAll();routesDirty=false;render(); })()",
+    );
+    await sleep(120);
+  }
   console.log(fails.length ? "BROWSER REPAIR CHECKS FAILED: " + fails.length : "BROWSER REPAIR CHECKS PASSED");
   process.exitCode = fails.length ? 1 : 0;
 } catch (e) {

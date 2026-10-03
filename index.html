@@ -2073,6 +2073,7 @@
             <option value="png">PNG files (ZIP)</option>
             <option value="pdf">PDF files (ZIP · raster)</option>
             <option value="combined">One PDF (all pages · raster)</option>
+            <option value="svg">SVG files (ZIP · vector)</option>
           </select></label
         >
         <label>From stage<select id="sequence-first"></select></label>
@@ -2111,9 +2112,10 @@
         >
       </div>
       <p class="muted">
-        PNG and PDF files are packaged in one ZIP download. PDFs contain
-        lossless raster images, not selectable text. Everything runs locally,
-        offline.
+        PNG, PDF, and SVG files are packaged in one ZIP download. PNGs and
+        PDFs contain lossless raster images, not selectable text; SVG
+        files are true vectors with selectable text. Everything runs
+        locally, offline.
       </p>
       <p id="sequence-status" role="status" aria-live="polite"></p>
       <div class="export-actions">
@@ -13040,19 +13042,25 @@
         const parts = sequenceScene.parts.filter(
           (p) => sequenceScene.reveals.get(p.key) <= i,
         );
-        const size = sequenceOutputSize(sequenceScene, opts);
+        const size = sequenceOutputSize(sequenceScene, opts),
+          vector = opts.format === "svg";
         $("#sequence-counts").textContent =
           parts.filter((p) => !p.key.startsWith("e:")).length +
           " shapes · " +
           parts.filter((p) => p.key.startsWith("e:")).length +
           " connectors · fixed output " +
-          size.w +
+          (vector ? sequenceScene.width : size.w) +
           " × " +
-          size.h +
+          (vector ? sequenceScene.height : size.h) +
           " px" +
-          (size.clamped ? " (resolution reduced for safe memory use)" : "") +
+          (vector
+            ? " · vector"
+            : size.clamped
+              ? " (resolution reduced for safe memory use)"
+            : "") +
           " · hidden layers excluded";
-        $("#sequence-page").disabled = opts.format === "png";
+        $("#sequence-page").disabled =
+          opts.format === "png" || opts.format === "svg";
         $("#sequence-json").disabled = opts.format === "combined";
         $("#sequence-download").disabled =
           !sequenceScene.parts.length || opts.first > opts.last;
@@ -13362,9 +13370,10 @@
             version: 1,
             title: scene.title,
             options,
-            width: size.w,
-            height: size.h,
-            rasterPDF: true,
+            width: options.format === "svg" ? scene.width : size.w,
+            height: options.format === "svg" ? scene.height : size.h,
+            rasterPDF: options.format !== "svg",
+            vector: options.format === "svg",
             stages: [],
           };
         let bytes = 0;
@@ -13378,44 +13387,50 @@
             await sequenceYield();
             check();
             const svg = stageFrame(scene, i);
-            const result = await rasterizeSVG(svg, size.scale, size);
-            const canvas = result.canvas;
-            let data;
-            try {
-              check();
-              if (options.format === "png") {
-                const blob = await new Promise((resolve, reject) =>
-                  canvas.toBlob(
-                    (b) =>
-                      b
-                        ? resolve(b)
-                        : reject(new Error("PNG encoding failed.")),
-                    "image/png",
-                  ),
-                );
-                data = new Uint8Array(await blob.arrayBuffer());
-              } else {
-                const img = await pdfRasterImage(
-                  canvas
-                    .getContext("2d")
-                    .getImageData(0, 0, canvas.width, canvas.height).data,
-                  canvas.width,
-                  canvas.height,
-                );
-                if (options.format === "combined") {
-                  images.push(img);
-                  bytes += img.data.length + (img.alpha?.length || 0);
-                } else
-                  data = rasterPDF(
-                    [img],
-                    scene.width,
-                    scene.height,
-                    options.page,
+            let data = null;
+            if (options.format === "svg") {
+              /* Vector frames need no rasterization: the stage frame is
+                 the same SVG the raster path renders, byte for byte. */
+              data = utf8(svg);
+            } else {
+              const result = await rasterizeSVG(svg, size.scale, size);
+              const canvas = result.canvas;
+              try {
+                check();
+                if (options.format === "png") {
+                  const blob = await new Promise((resolve, reject) =>
+                    canvas.toBlob(
+                      (b) =>
+                        b
+                          ? resolve(b)
+                          : reject(new Error("PNG encoding failed.")),
+                      "image/png",
+                    ),
                   );
+                  data = new Uint8Array(await blob.arrayBuffer());
+                } else {
+                  const img = await pdfRasterImage(
+                    canvas
+                      .getContext("2d")
+                      .getImageData(0, 0, canvas.width, canvas.height).data,
+                    canvas.width,
+                    canvas.height,
+                  );
+                  if (options.format === "combined") {
+                    images.push(img);
+                    bytes += img.data.length + (img.alpha?.length || 0);
+                  } else
+                    data = rasterPDF(
+                      [img],
+                      scene.width,
+                      scene.height,
+                      options.page,
+                    );
+                }
+              } finally {
+                canvas.width = 0;
+                canvas.height = 0;
               }
-            } finally {
-              canvas.width = 0;
-              canvas.height = 0;
             }
             check();
             const entry = scene.stages[i - 1],
@@ -13425,7 +13440,11 @@
                 String(i).padStart(3, "0") +
                 "-" +
                 sequenceFilename(entry.name) +
-                (options.format === "png" ? ".png" : ".pdf");
+                (options.format === "png"
+                  ? ".png"
+                  : options.format === "svg"
+                    ? ".svg"
+                    : ".pdf");
             if (data) {
               files.push({ name: filename, data });
               bytes += data.length;
