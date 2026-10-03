@@ -1,0 +1,315 @@
+{
+  "when": "2026-09-23T16:27:44.785Z",
+  "selftest": false,
+  "passed": 48,
+  "failed": 3,
+  "pending": 0,
+  "results": [
+    {
+      "what": "arrow-clearance: loaded document identity matches the fixture",
+      "ok": true,
+      "detail": "",
+      "status": "pass"
+    },
+    {
+      "what": "arrow-clearance zoom 0.5 pixels match the baseline",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match"
+    },
+    {
+      "what": "arrow-clearance zoom 1 pixels match the baseline",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match"
+    },
+    {
+      "what": "arrow-clearance zoom 2 pixels match the baseline",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match"
+    },
+    {
+      "what": "negative control: appearance-only change is caught by pixel compare",
+      "ok": true,
+      "detail": "bad=123873/1170720",
+      "status": "pass"
+    },
+    {
+      "what": "arrow-clearance: restored document matches the pristine look [match]",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match"
+    },
+    {
+      "what": "arrow-clearance selected pixels [mismatch]",
+      "ok": false,
+      "detail": "403833/1170720 pixels (34.4944%) exceed tolerance 16",
+      "status": "mismatch"
+    },
+    {
+      "what": "arrow-clearance deselected pixels [mismatch]",
+      "ok": false,
+      "detail": "350888/1170720 pixels (29.9720%) exceed tolerance 16",
+      "status": "mismatch"
+    },
+    {
+      "what": "arrow-clearance export preview pixels [mismatch]",
+      "ok": false,
+      "detail": "314304/1170720 pixels (26.8471%) exceed tolerance 16",
+      "status": "mismatch"
+    },
+    {
+      "what": "arrow-clearance: zoom/selection/export-preview do not mutate the document",
+      "ok": true,
+      "detail": "",
+      "status": "pass"
+    },
+    {
+      "what": "diamond-attachments: loaded document identity matches the fixture",
+      "ok": true,
+      "detail": "",
+      "status": "pass"
+    },
+    {
+      "what": "diamond-attachments zoom 0.5 pixels match the baseline",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match"
+    },
+    {
+      "what": "diamond-attachments zoom 1 pixels match the baseline",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match"
+    },
+    {
+      "what": "diamond-attachments zoom 2 pixels match the baseline",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match"
+    },
+    {
+      "what": "diamond-attachments selected pixels [match]",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match"
+    },
+    {
+      "what": "diamond-attachments deselected pixels [match]",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match"
+    },
+    {
+      "what": "diamond-attachments export preview pixels [match]",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match"
+    },
+    {
+      "what": "diamond-attachments: zoom/selection/export-preview do not mutate the document",
+      "ok": true,
+      "detail": "",
+      "status": "pass"
+    },
+    {
+      "what": "ports-crowded: loaded document identity matches the fixture",
+      "ok": true,
+      "detail": "",
+      "status": "pass"
+    },
+    {
+      "what": "ports-crowded zoom 0.5 pixels match the baseline",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match"
+    },
+    {
+      "what": "ports-crowded zoom 1 pixels match the baseline",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match"
+    },
+    {
+      "what": "ports-crowded zoom 2 pixels match the baseline",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match"
+    },
+    {
+      "what": "ports-crowded selected pixels [match]",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match"
+    },
+    {
+      "what": "ports-crowded deselected pixels [match]",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match"
+    },
+    {
+      "what": "ports-crowded export preview pixels [match]",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match"
+    },
+    {
+      "what": "ports-crowded: zoom/selection/export-preview do not mutate the document",
+      "ok": true,
+      "detail": "",
+      "status": "pass"
+    },
+    {
+      "what": "ports-opposite: loaded document identity matches the fixture",
+      "ok": true,
+      "detail": "",
+      "status": "pass"
+    },
+    {
+      "what": "ports-opposite zoom 0.5 pixels match the baseline",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match"
+    },
+    {
+      "what": "ports-opposite zoom 1 pixels match the baseline",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match"
+    },
+    {
+      "what": "ports-opposite zoom 2 pixels match the baseline",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match"
+    },
+    {
+      "what": "ports-opposite selected pixels [match]",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match"
+    },
+    {
+      "what": "ports-opposite deselected pixels [match]",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match"
+    },
+    {
+      "what": "ports-opposite export preview pixels [match]",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match"
+    },
+    {
+      "what": "ports-opposite: zoom/selection/export-preview do not mutate the document",
+      "ok": true,
+      "detail": "",
+      "status": "pass"
+    },
+    {
+      "what": "reciprocal: loaded document identity matches the fixture",
+      "ok": true,
+      "detail": "",
+      "status": "pass"
+    },
+    {
+      "what": "reciprocal zoom 0.5 pixels match the baseline",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match"
+    },
+    {
+      "what": "reciprocal zoom 1 pixels match the baseline",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match"
+    },
+    {
+      "what": "reciprocal zoom 2 pixels match the baseline",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match"
+    },
+    {
+      "what": "reciprocal selected pixels [match]",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match"
+    },
+    {
+      "what": "reciprocal deselected pixels [match]",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match"
+    },
+    {
+      "what": "reciprocal export preview pixels [match]",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match"
+    },
+    {
+      "what": "reciprocal: zoom/selection/export-preview do not mutate the document",
+      "ok": true,
+      "detail": "",
+      "status": "pass"
+    },
+    {
+      "what": "shared-node-overlap: loaded document identity matches the fixture",
+      "ok": true,
+      "detail": "",
+      "status": "pass"
+    },
+    {
+      "what": "shared-node-overlap zoom 0.5 pixels match the baseline",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match"
+    },
+    {
+      "what": "shared-node-overlap zoom 1 pixels match the baseline",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match"
+    },
+    {
+      "what": "shared-node-overlap zoom 2 pixels match the baseline",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match"
+    },
+    {
+      "what": "shared-node-overlap selected pixels [match]",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match"
+    },
+    {
+      "what": "shared-node-overlap deselected pixels [match]",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match"
+    },
+    {
+      "what": "shared-node-overlap export preview pixels [match]",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match"
+    },
+    {
+      "what": "shared-node-overlap: zoom/selection/export-preview do not mutate the document",
+      "ok": true,
+      "detail": "",
+      "status": "pass"
+    },
+    {
+      "what": "sentinel document unchanged (separate origin)",
+      "ok": true,
+      "detail": "",
+      "status": "pass"
+    }
+  ]
+}

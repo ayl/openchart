@@ -1,0 +1,115 @@
+{
+  "name": "ports-opposite",
+  "description": "An incoming and an outgoing connector whose remote endpoints are both above the same box: both resolved to the single top-center port (review finding: shared point ~(140,216)).",
+  "doc": {
+    "version": 2,
+    "title": "Untitled diagram",
+    "nodes": {
+      "357dda3b-352c-4cdf-831b-e11450b5bc15": {
+        "id": "357dda3b-352c-4cdf-831b-e11450b5bc15",
+        "type": "rect",
+        "x": 430,
+        "y": 372,
+        "w": 140,
+        "h": 56,
+        "fill": "#edf5ff",
+        "stroke": "#3a414a",
+        "sw": 2,
+        "text": "Process",
+        "fontSize": 13,
+        "align": "center",
+        "bold": false,
+        "dash": "solid",
+        "rot": 0,
+        "layerId": "default",
+        "parentId": null
+      },
+      "08469e88-e95e-4f42-b75d-6ceb4b6e4b88": {
+        "id": "08469e88-e95e-4f42-b75d-6ceb4b6e4b88",
+        "type": "rect",
+        "x": 230,
+        "y": 132,
+        "w": 140,
+        "h": 56,
+        "fill": "#edf5ff",
+        "stroke": "#3a414a",
+        "sw": 2,
+        "text": "Process",
+        "fontSize": 13,
+        "align": "center",
+        "bold": false,
+        "dash": "solid",
+        "rot": 0,
+        "layerId": "default",
+        "parentId": null
+      },
+      "498c2ad8-098a-49ae-b9e0-78a4d8a16fbd": {
+        "id": "498c2ad8-098a-49ae-b9e0-78a4d8a16fbd",
+        "type": "rect",
+        "x": 630,
+        "y": 132,
+        "w": 140,
+        "h": 56,
+        "fill": "#edf5ff",
+        "stroke": "#3a414a",
+        "sw": 2,
+        "text": "Process",
+        "fontSize": 13,
+        "align": "center",
+        "bold": false,
+        "dash": "solid",
+        "rot": 0,
+        "layerId": "default",
+        "parentId": null
+      }
+    },
+    "edges": {
+      "a7a4d9af-0193-4a4e-a803-0c49859a40a9": {
+        "id": "a7a4d9af-0193-4a4e-a803-0c49859a40a9",
+        "src": "08469e88-e95e-4f42-b75d-6ceb4b6e4b88",
+        "dst": "357dda3b-352c-4cdf-831b-e11450b5bc15",
+        "srcSide": null,
+        "dstSide": null,
+        "label": "",
+        "dash": "solid",
+        "arrow": "solid",
+        "startArrow": "none",
+        "color": "#475569",
+        "sw": 1.8,
+        "route": "orthogonal",
+        "layerId": "default"
+      },
+      "6bb2d53c-96c8-49e0-9875-b450fa1e6192": {
+        "id": "6bb2d53c-96c8-49e0-9875-b450fa1e6192",
+        "src": "357dda3b-352c-4cdf-831b-e11450b5bc15",
+        "dst": "498c2ad8-098a-49ae-b9e0-78a4d8a16fbd",
+        "srcSide": null,
+        "dstSide": null,
+        "label": "",
+        "dash": "solid",
+        "arrow": "solid",
+        "startArrow": "none",
+        "color": "#475569",
+        "sw": 1.8,
+        "route": "orthogonal",
+        "layerId": "default"
+      }
+    },
+    "order": [
+      "357dda3b-352c-4cdf-831b-e11450b5bc15",
+      "08469e88-e95e-4f42-b75d-6ceb4b6e4b88",
+      "498c2ad8-098a-49ae-b9e0-78a4d8a16fbd",
+      "e:a7a4d9af-0193-4a4e-a803-0c49859a40a9",
+      "e:6bb2d53c-96c8-49e0-9875-b450fa1e6192"
+    ],
+    "layers": [
+      {
+        "id": "default",
+        "name": "Layer 1",
+        "visible": true,
+        "locked": false
+      }
+    ],
+    "activeLayer": "default"
+  }
+}

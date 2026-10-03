@@ -1,0 +1,189 @@
+{
+  "when": "2026-09-25T19:04:32.457Z",
+  "promoted": [
+    "arrow-clearance-deselected.png",
+    "arrow-clearance-export.png",
+    "arrow-clearance-restored.png",
+    "arrow-clearance-selected.png",
+    "arrow-clearance-z0.5.png",
+    "arrow-clearance-z1.png",
+    "arrow-clearance-z2.png",
+    "diamond-attachments-deselected.png",
+    "diamond-attachments-export.png",
+    "diamond-attachments-selected.png",
+    "diamond-attachments-z0.5.png",
+    "diamond-attachments-z1.png",
+    "diamond-attachments-z2.png",
+    "ports-crowded-deselected.png",
+    "ports-crowded-export.png",
+    "ports-crowded-selected.png",
+    "ports-crowded-z0.5.png",
+    "ports-crowded-z1.png",
+    "ports-crowded-z2.png",
+    "ports-opposite-deselected.png",
+    "ports-opposite-export.png",
+    "ports-opposite-selected.png",
+    "ports-opposite-z0.5.png",
+    "ports-opposite-z1.png",
+    "ports-opposite-z2.png",
+    "reciprocal-deselected.png",
+    "reciprocal-export.png",
+    "reciprocal-selected.png",
+    "reciprocal-z0.5.png",
+    "reciprocal-z1.png",
+    "reciprocal-z2.png",
+    "shared-node-overlap-deselected.png",
+    "shared-node-overlap-export.png",
+    "shared-node-overlap-selected.png",
+    "shared-node-overlap-z0.5.png",
+    "shared-node-overlap-z1.png",
+    "shared-node-overlap-z2.png"
+  ],
+  "reviewedDifferences": [
+    {
+      "what": "arrow-clearance zoom 0.5 pixels [mismatch]",
+      "detail": "1649/1170720 pixels (0.1409%) exceed tolerance 16"
+    },
+    {
+      "what": "arrow-clearance zoom 1 pixels [mismatch]",
+      "detail": "1655/1170720 pixels (0.1414%) exceed tolerance 16"
+    },
+    {
+      "what": "arrow-clearance zoom 2 pixels [mismatch]",
+      "detail": "1649/1170720 pixels (0.1409%) exceed tolerance 16"
+    },
+    {
+      "what": "arrow-clearance selected pixels [mismatch]",
+      "detail": "1655/1170720 pixels (0.1414%) exceed tolerance 16"
+    },
+    {
+      "what": "arrow-clearance deselected pixels [mismatch]",
+      "detail": "1655/1170720 pixels (0.1414%) exceed tolerance 16"
+    },
+    {
+      "what": "arrow-clearance export preview pixels [mismatch]",
+      "detail": "1392/1170720 pixels (0.1189%) exceed tolerance 16"
+    },
+    {
+      "what": "diamond-attachments zoom 0.5 pixels [mismatch]",
+      "detail": "1649/1170720 pixels (0.1409%) exceed tolerance 16"
+    },
+    {
+      "what": "diamond-attachments zoom 1 pixels [mismatch]",
+      "detail": "1655/1170720 pixels (0.1414%) exceed tolerance 16"
+    },
+    {
+      "what": "diamond-attachments zoom 2 pixels [mismatch]",
+      "detail": "1649/1170720 pixels (0.1409%) exceed tolerance 16"
+    },
+    {
+      "what": "diamond-attachments selected pixels [mismatch]",
+      "detail": "1649/1170720 pixels (0.1409%) exceed tolerance 16"
+    },
+    {
+      "what": "diamond-attachments deselected pixels [mismatch]",
+      "detail": "1649/1170720 pixels (0.1409%) exceed tolerance 16"
+    },
+    {
+      "what": "diamond-attachments export preview pixels [mismatch]",
+      "detail": "1386/1170720 pixels (0.1184%) exceed tolerance 16"
+    },
+    {
+      "what": "ports-crowded zoom 0.5 pixels [mismatch]",
+      "detail": "1649/1170720 pixels (0.1409%) exceed tolerance 16"
+    },
+    {
+      "what": "ports-crowded zoom 1 pixels [mismatch]",
+      "detail": "1655/1170720 pixels (0.1414%) exceed tolerance 16"
+    },
+    {
+      "what": "ports-crowded zoom 2 pixels [mismatch]",
+      "detail": "1649/1170720 pixels (0.1409%) exceed tolerance 16"
+    },
+    {
+      "what": "ports-crowded selected pixels [mismatch]",
+      "detail": "1649/1170720 pixels (0.1409%) exceed tolerance 16"
+    },
+    {
+      "what": "ports-crowded deselected pixels [mismatch]",
+      "detail": "1649/1170720 pixels (0.1409%) exceed tolerance 16"
+    },
+    {
+      "what": "ports-crowded export preview pixels [mismatch]",
+      "detail": "1386/1170720 pixels (0.1184%) exceed tolerance 16"
+    },
+    {
+      "what": "ports-opposite zoom 0.5 pixels [mismatch]",
+      "detail": "1649/1170720 pixels (0.1409%) exceed tolerance 16"
+    },
+    {
+      "what": "ports-opposite zoom 1 pixels [mismatch]",
+      "detail": "1655/1170720 pixels (0.1414%) exceed tolerance 16"
+    },
+    {
+      "what": "ports-opposite zoom 2 pixels [mismatch]",
+      "detail": "1649/1170720 pixels (0.1409%) exceed tolerance 16"
+    },
+    {
+      "what": "ports-opposite selected pixels [mismatch]",
+      "detail": "1649/1170720 pixels (0.1409%) exceed tolerance 16"
+    },
+    {
+      "what": "ports-opposite deselected pixels [mismatch]",
+      "detail": "1649/1170720 pixels (0.1409%) exceed tolerance 16"
+    },
+    {
+      "what": "ports-opposite export preview pixels [mismatch]",
+      "detail": "1386/1170720 pixels (0.1184%) exceed tolerance 16"
+    },
+    {
+      "what": "reciprocal zoom 0.5 pixels [mismatch]",
+      "detail": "1649/1170720 pixels (0.1409%) exceed tolerance 16"
+    },
+    {
+      "what": "reciprocal zoom 1 pixels [mismatch]",
+      "detail": "1655/1170720 pixels (0.1414%) exceed tolerance 16"
+    },
+    {
+      "what": "reciprocal zoom 2 pixels [mismatch]",
+      "detail": "1649/1170720 pixels (0.1409%) exceed tolerance 16"
+    },
+    {
+      "what": "reciprocal selected pixels [mismatch]",
+      "detail": "1649/1170720 pixels (0.1409%) exceed tolerance 16"
+    },
+    {
+      "what": "reciprocal deselected pixels [mismatch]",
+      "detail": "1649/1170720 pixels (0.1409%) exceed tolerance 16"
+    },
+    {
+      "what": "reciprocal export preview pixels [mismatch]",
+      "detail": "1386/1170720 pixels (0.1184%) exceed tolerance 16"
+    },
+    {
+      "what": "shared-node-overlap zoom 0.5 pixels [mismatch]",
+      "detail": "1649/1170720 pixels (0.1409%) exceed tolerance 16"
+    },
+    {
+      "what": "shared-node-overlap zoom 1 pixels [mismatch]",
+      "detail": "1655/1170720 pixels (0.1414%) exceed tolerance 16"
+    },
+    {
+      "what": "shared-node-overlap zoom 2 pixels [mismatch]",
+      "detail": "1649/1170720 pixels (0.1409%) exceed tolerance 16"
+    },
+    {
+      "what": "shared-node-overlap selected pixels [mismatch]",
+      "detail": "1649/1170720 pixels (0.1409%) exceed tolerance 16"
+    },
+    {
+      "what": "shared-node-overlap deselected pixels [mismatch]",
+      "detail": "1649/1170720 pixels (0.1409%) exceed tolerance 16"
+    },
+    {
+      "what": "shared-node-overlap export preview pixels [mismatch]",
+      "detail": "1386/1170720 pixels (0.1184%) exceed tolerance 16"
+    }
+  ],
+  "note": "Promoted from the current run's candidates after review. Negative-control captures are excluded by policy and never become baselines."
+}

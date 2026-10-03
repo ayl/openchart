@@ -1,0 +1,460 @@
+{
+  "when": "2026-09-26T14:45:47.388Z",
+  "selftest": false,
+  "approve": false,
+  "passed": 64,
+  "failed": 0,
+  "hard": 0,
+  "reviewable": 0,
+  "pending": 0,
+  "results": [
+    {
+      "what": "arrow-clearance: loaded document identity matches the fixture",
+      "ok": true,
+      "detail": "",
+      "status": "pass",
+      "kind": "hard"
+    },
+    {
+      "what": "arrow-clearance zoom 0.5 pixels match the baseline",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "arrow-clearance zoom 1 pixels match the baseline",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "arrow-clearance zoom 2 pixels match the baseline",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "negative control: appearance-only change is caught by pixel compare",
+      "ok": true,
+      "detail": "bad=2425/1170720",
+      "status": "pass",
+      "kind": "hard"
+    },
+    {
+      "what": "arrow-clearance: restored document state matches the pre-mutation state",
+      "ok": true,
+      "detail": "",
+      "status": "pass",
+      "kind": "visual"
+    },
+    {
+      "what": "arrow-clearance: restored document matches the pristine look [match]",
+      "ok": true,
+      "detail": " (vs this run's pristine capture)",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "arrow-clearance: real selection updates the inspector heading",
+      "ok": true,
+      "detail": "{\"sel\":1,\"title\":\"Process\"}",
+      "status": "pass",
+      "kind": "hard"
+    },
+    {
+      "what": "arrow-clearance selected pixels [match]",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "arrow-clearance: deselection returns the inspector to the document view",
+      "ok": true,
+      "detail": "\"Document\"",
+      "status": "pass",
+      "kind": "hard"
+    },
+    {
+      "what": "arrow-clearance deselected pixels [match]",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "arrow-clearance export preview pixels [match]",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "arrow-clearance: zoom/selection/export-preview do not mutate the document",
+      "ok": true,
+      "detail": "",
+      "status": "pass",
+      "kind": "hard"
+    },
+    {
+      "what": "diamond-attachments: loaded document identity matches the fixture",
+      "ok": true,
+      "detail": "",
+      "status": "pass",
+      "kind": "hard"
+    },
+    {
+      "what": "diamond-attachments zoom 0.5 pixels match the baseline",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "diamond-attachments zoom 1 pixels match the baseline",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "diamond-attachments zoom 2 pixels match the baseline",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "diamond-attachments: real selection updates the inspector heading",
+      "ok": true,
+      "detail": "{\"sel\":1,\"title\":\"Decision\"}",
+      "status": "pass",
+      "kind": "hard"
+    },
+    {
+      "what": "diamond-attachments selected pixels [match]",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "diamond-attachments: deselection returns the inspector to the document view",
+      "ok": true,
+      "detail": "\"Document\"",
+      "status": "pass",
+      "kind": "hard"
+    },
+    {
+      "what": "diamond-attachments deselected pixels [match]",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "diamond-attachments export preview pixels [match]",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "diamond-attachments: zoom/selection/export-preview do not mutate the document",
+      "ok": true,
+      "detail": "",
+      "status": "pass",
+      "kind": "hard"
+    },
+    {
+      "what": "ports-crowded: loaded document identity matches the fixture",
+      "ok": true,
+      "detail": "",
+      "status": "pass",
+      "kind": "hard"
+    },
+    {
+      "what": "ports-crowded zoom 0.5 pixels match the baseline",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "ports-crowded zoom 1 pixels match the baseline",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "ports-crowded zoom 2 pixels match the baseline",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "ports-crowded: real selection updates the inspector heading",
+      "ok": true,
+      "detail": "{\"sel\":1,\"title\":\"Process\"}",
+      "status": "pass",
+      "kind": "hard"
+    },
+    {
+      "what": "ports-crowded selected pixels [match]",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "ports-crowded: deselection returns the inspector to the document view",
+      "ok": true,
+      "detail": "\"Document\"",
+      "status": "pass",
+      "kind": "hard"
+    },
+    {
+      "what": "ports-crowded deselected pixels [match]",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "ports-crowded export preview pixels [match]",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "ports-crowded: zoom/selection/export-preview do not mutate the document",
+      "ok": true,
+      "detail": "",
+      "status": "pass",
+      "kind": "hard"
+    },
+    {
+      "what": "ports-opposite: loaded document identity matches the fixture",
+      "ok": true,
+      "detail": "",
+      "status": "pass",
+      "kind": "hard"
+    },
+    {
+      "what": "ports-opposite zoom 0.5 pixels match the baseline",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "ports-opposite zoom 1 pixels match the baseline",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "ports-opposite zoom 2 pixels match the baseline",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "ports-opposite: real selection updates the inspector heading",
+      "ok": true,
+      "detail": "{\"sel\":1,\"title\":\"Process\"}",
+      "status": "pass",
+      "kind": "hard"
+    },
+    {
+      "what": "ports-opposite selected pixels [match]",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "ports-opposite: deselection returns the inspector to the document view",
+      "ok": true,
+      "detail": "\"Document\"",
+      "status": "pass",
+      "kind": "hard"
+    },
+    {
+      "what": "ports-opposite deselected pixels [match]",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "ports-opposite export preview pixels [match]",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "ports-opposite: zoom/selection/export-preview do not mutate the document",
+      "ok": true,
+      "detail": "",
+      "status": "pass",
+      "kind": "hard"
+    },
+    {
+      "what": "reciprocal: loaded document identity matches the fixture",
+      "ok": true,
+      "detail": "",
+      "status": "pass",
+      "kind": "hard"
+    },
+    {
+      "what": "reciprocal zoom 0.5 pixels match the baseline",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "reciprocal zoom 1 pixels match the baseline",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "reciprocal zoom 2 pixels match the baseline",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "reciprocal: real selection updates the inspector heading",
+      "ok": true,
+      "detail": "{\"sel\":1,\"title\":\"Process\"}",
+      "status": "pass",
+      "kind": "hard"
+    },
+    {
+      "what": "reciprocal selected pixels [match]",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "reciprocal: deselection returns the inspector to the document view",
+      "ok": true,
+      "detail": "\"Document\"",
+      "status": "pass",
+      "kind": "hard"
+    },
+    {
+      "what": "reciprocal deselected pixels [match]",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "reciprocal export preview pixels [match]",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "reciprocal: zoom/selection/export-preview do not mutate the document",
+      "ok": true,
+      "detail": "",
+      "status": "pass",
+      "kind": "hard"
+    },
+    {
+      "what": "shared-node-overlap: loaded document identity matches the fixture",
+      "ok": true,
+      "detail": "",
+      "status": "pass",
+      "kind": "hard"
+    },
+    {
+      "what": "shared-node-overlap zoom 0.5 pixels match the baseline",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "shared-node-overlap zoom 1 pixels match the baseline",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "shared-node-overlap zoom 2 pixels match the baseline",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "shared-node-overlap: real selection updates the inspector heading",
+      "ok": true,
+      "detail": "{\"sel\":1,\"title\":\"Process\"}",
+      "status": "pass",
+      "kind": "hard"
+    },
+    {
+      "what": "shared-node-overlap selected pixels [match]",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "shared-node-overlap: deselection returns the inspector to the document view",
+      "ok": true,
+      "detail": "\"Document\"",
+      "status": "pass",
+      "kind": "hard"
+    },
+    {
+      "what": "shared-node-overlap deselected pixels [match]",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "shared-node-overlap export preview pixels [match]",
+      "ok": true,
+      "detail": "status=match bad=0",
+      "status": "match",
+      "kind": "visual"
+    },
+    {
+      "what": "shared-node-overlap: zoom/selection/export-preview do not mutate the document",
+      "ok": true,
+      "detail": "",
+      "status": "pass",
+      "kind": "hard"
+    },
+    {
+      "what": "sentinel document unchanged (separate origin)",
+      "ok": true,
+      "detail": "",
+      "status": "pass",
+      "kind": "hard"
+    }
+  ]
+}

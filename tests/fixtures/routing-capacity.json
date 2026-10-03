@@ -1,0 +1,149 @@
+{
+  "name": "routing-capacity",
+  "description": "Automatic arrivals spill to facing adjacent sides with arrowhead-aware capacity. Expected: three top, two right, three bottom arrivals, with room for the full large marker viewport plus breathing room, no crossings.",
+  "doc": {
+    "version": 3,
+    "title": "Crowded automatic attachments",
+    "nodes": {
+      "hub": {
+        "id": "hub",
+        "text": "Hub",
+        "type": "rect",
+        "x": 30,
+        "y": 72,
+        "w": 140,
+        "h": 40
+      },
+      "source0": {
+        "id": "source0",
+        "text": "Source 1",
+        "type": "rect",
+        "x": 530,
+        "y": -208,
+        "w": 140,
+        "h": 56
+      },
+      "source1": {
+        "id": "source1",
+        "text": "Source 2",
+        "type": "rect",
+        "x": 530,
+        "y": -128,
+        "w": 140,
+        "h": 56
+      },
+      "source2": {
+        "id": "source2",
+        "text": "Source 3",
+        "type": "rect",
+        "x": 530,
+        "y": -48,
+        "w": 140,
+        "h": 56
+      },
+      "source3": {
+        "id": "source3",
+        "text": "Source 4",
+        "type": "rect",
+        "x": 530,
+        "y": 32,
+        "w": 140,
+        "h": 56
+      },
+      "source4": {
+        "id": "source4",
+        "text": "Source 5",
+        "type": "rect",
+        "x": 530,
+        "y": 112,
+        "w": 140,
+        "h": 56
+      },
+      "source5": {
+        "id": "source5",
+        "text": "Source 6",
+        "type": "rect",
+        "x": 530,
+        "y": 192,
+        "w": 140,
+        "h": 56
+      },
+      "source6": {
+        "id": "source6",
+        "text": "Source 7",
+        "type": "rect",
+        "x": 530,
+        "y": 272,
+        "w": 140,
+        "h": 56
+      },
+      "source7": {
+        "id": "source7",
+        "text": "Source 8",
+        "type": "rect",
+        "x": 530,
+        "y": 352,
+        "w": 140,
+        "h": 56
+      }
+    },
+    "edges": {
+      "flow0": {
+        "id": "flow0",
+        "src": "source0",
+        "dst": "hub",
+        "route": "orthogonal",
+        "arrow": "solid"
+      },
+      "flow1": {
+        "id": "flow1",
+        "src": "source1",
+        "dst": "hub",
+        "route": "orthogonal",
+        "arrow": "solid"
+      },
+      "flow2": {
+        "id": "flow2",
+        "src": "source2",
+        "dst": "hub",
+        "route": "orthogonal",
+        "arrow": "solid"
+      },
+      "flow3": {
+        "id": "flow3",
+        "src": "source3",
+        "dst": "hub",
+        "route": "orthogonal",
+        "arrow": "solid"
+      },
+      "flow4": {
+        "id": "flow4",
+        "src": "source4",
+        "dst": "hub",
+        "route": "orthogonal",
+        "arrow": "solid"
+      },
+      "flow5": {
+        "id": "flow5",
+        "src": "source5",
+        "dst": "hub",
+        "route": "orthogonal",
+        "arrow": "solid"
+      },
+      "flow6": {
+        "id": "flow6",
+        "src": "source6",
+        "dst": "hub",
+        "route": "orthogonal",
+        "arrow": "solid"
+      },
+      "flow7": {
+        "id": "flow7",
+        "src": "source7",
+        "dst": "hub",
+        "route": "orthogonal",
+        "arrow": "solid"
+      }
+    }
+  }
+}

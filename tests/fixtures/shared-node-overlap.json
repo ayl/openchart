@@ -1,0 +1,115 @@
+{
+  "name": "shared-node-overlap",
+  "description": "Two connectors share endpoint A; one approaches A along the corridor of the other. Crossings away from the shared attachment are currently excluded from avoidance (phase 1 remaining work).",
+  "doc": {
+    "version": 2,
+    "title": "Untitled diagram",
+    "nodes": {
+      "a2c5340f-88d1-4a72-a848-e6436a4bff59": {
+        "id": "a2c5340f-88d1-4a72-a848-e6436a4bff59",
+        "type": "rect",
+        "x": 130,
+        "y": 372,
+        "w": 140,
+        "h": 56,
+        "fill": "#edf5ff",
+        "stroke": "#3a414a",
+        "sw": 2,
+        "text": "Process",
+        "fontSize": 13,
+        "align": "center",
+        "bold": false,
+        "dash": "solid",
+        "rot": 0,
+        "layerId": "default",
+        "parentId": null
+      },
+      "52c63e5c-e28d-4e47-8bae-227db9a5a520": {
+        "id": "52c63e5c-e28d-4e47-8bae-227db9a5a520",
+        "type": "rect",
+        "x": 450,
+        "y": 372,
+        "w": 140,
+        "h": 56,
+        "fill": "#edf5ff",
+        "stroke": "#3a414a",
+        "sw": 2,
+        "text": "Process",
+        "fontSize": 13,
+        "align": "center",
+        "bold": false,
+        "dash": "solid",
+        "rot": 0,
+        "layerId": "default",
+        "parentId": null
+      },
+      "461d3485-ad50-408e-a7dd-fbe2f2c0038d": {
+        "id": "461d3485-ad50-408e-a7dd-fbe2f2c0038d",
+        "type": "rect",
+        "x": 630,
+        "y": 192,
+        "w": 140,
+        "h": 56,
+        "fill": "#edf5ff",
+        "stroke": "#3a414a",
+        "sw": 2,
+        "text": "Process",
+        "fontSize": 13,
+        "align": "center",
+        "bold": false,
+        "dash": "solid",
+        "rot": 0,
+        "layerId": "default",
+        "parentId": null
+      }
+    },
+    "edges": {
+      "775db4c4-9390-4cdc-a966-08d5517d0628": {
+        "id": "775db4c4-9390-4cdc-a966-08d5517d0628",
+        "src": "a2c5340f-88d1-4a72-a848-e6436a4bff59",
+        "dst": "52c63e5c-e28d-4e47-8bae-227db9a5a520",
+        "srcSide": null,
+        "dstSide": null,
+        "label": "",
+        "dash": "solid",
+        "arrow": "solid",
+        "startArrow": "none",
+        "color": "#475569",
+        "sw": 1.8,
+        "route": "orthogonal",
+        "layerId": "default"
+      },
+      "21742525-1bd5-4894-9da3-83d9a654e2f4": {
+        "id": "21742525-1bd5-4894-9da3-83d9a654e2f4",
+        "src": "461d3485-ad50-408e-a7dd-fbe2f2c0038d",
+        "dst": "a2c5340f-88d1-4a72-a848-e6436a4bff59",
+        "srcSide": null,
+        "dstSide": null,
+        "label": "",
+        "dash": "solid",
+        "arrow": "solid",
+        "startArrow": "none",
+        "color": "#475569",
+        "sw": 1.8,
+        "route": "orthogonal",
+        "layerId": "default"
+      }
+    },
+    "order": [
+      "a2c5340f-88d1-4a72-a848-e6436a4bff59",
+      "52c63e5c-e28d-4e47-8bae-227db9a5a520",
+      "461d3485-ad50-408e-a7dd-fbe2f2c0038d",
+      "e:775db4c4-9390-4cdc-a966-08d5517d0628",
+      "e:21742525-1bd5-4894-9da3-83d9a654e2f4"
+    ],
+    "layers": [
+      {
+        "id": "default",
+        "name": "Layer 1",
+        "visible": true,
+        "locked": false
+      }
+    ],
+    "activeLayer": "default"
+  }
+}

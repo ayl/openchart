@@ -1,0 +1,95 @@
+{
+  "name": "reciprocal",
+  "description": "A->B and B->A between two aligned shapes: separate arrowheads with parallel, consistently-handed approaches.",
+  "doc": {
+    "version": 2,
+    "title": "Untitled diagram",
+    "nodes": {
+      "8f853c5f-994c-407f-8507-a37fc9af3f80": {
+        "id": "8f853c5f-994c-407f-8507-a37fc9af3f80",
+        "type": "rect",
+        "x": 130,
+        "y": 272,
+        "w": 140,
+        "h": 56,
+        "fill": "#edf5ff",
+        "stroke": "#3a414a",
+        "sw": 2,
+        "text": "Process",
+        "fontSize": 13,
+        "align": "center",
+        "bold": false,
+        "dash": "solid",
+        "rot": 0,
+        "layerId": "default",
+        "parentId": null
+      },
+      "8dce3c23-2368-4e83-a701-1adf6ca08c76": {
+        "id": "8dce3c23-2368-4e83-a701-1adf6ca08c76",
+        "type": "rect",
+        "x": 530,
+        "y": 272,
+        "w": 140,
+        "h": 56,
+        "fill": "#edf5ff",
+        "stroke": "#3a414a",
+        "sw": 2,
+        "text": "Process",
+        "fontSize": 13,
+        "align": "center",
+        "bold": false,
+        "dash": "solid",
+        "rot": 0,
+        "layerId": "default",
+        "parentId": null
+      }
+    },
+    "edges": {
+      "135da43a-30f3-4319-8e0c-70fa6c385cf0": {
+        "id": "135da43a-30f3-4319-8e0c-70fa6c385cf0",
+        "src": "8f853c5f-994c-407f-8507-a37fc9af3f80",
+        "dst": "8dce3c23-2368-4e83-a701-1adf6ca08c76",
+        "srcSide": null,
+        "dstSide": null,
+        "label": "",
+        "dash": "solid",
+        "arrow": "solid",
+        "startArrow": "none",
+        "color": "#475569",
+        "sw": 1.8,
+        "route": "orthogonal",
+        "layerId": "default"
+      },
+      "e89afae5-e9a6-44fe-8058-97e10f53a0e1": {
+        "id": "e89afae5-e9a6-44fe-8058-97e10f53a0e1",
+        "src": "8dce3c23-2368-4e83-a701-1adf6ca08c76",
+        "dst": "8f853c5f-994c-407f-8507-a37fc9af3f80",
+        "srcSide": null,
+        "dstSide": null,
+        "label": "",
+        "dash": "solid",
+        "arrow": "solid",
+        "startArrow": "none",
+        "color": "#475569",
+        "sw": 1.8,
+        "route": "orthogonal",
+        "layerId": "default"
+      }
+    },
+    "order": [
+      "8f853c5f-994c-407f-8507-a37fc9af3f80",
+      "8dce3c23-2368-4e83-a701-1adf6ca08c76",
+      "e:135da43a-30f3-4319-8e0c-70fa6c385cf0",
+      "e:e89afae5-e9a6-44fe-8058-97e10f53a0e1"
+    ],
+    "layers": [
+      {
+        "id": "default",
+        "name": "Layer 1",
+        "visible": true,
+        "locked": false
+      }
+    ],
+    "activeLayer": "default"
+  }
+}

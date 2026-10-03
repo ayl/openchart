@@ -1,0 +1,231 @@
+{
+  "when": "2026-09-23T17:16:03.401Z",
+  "fixtures": {
+    "representative": {
+      "nodes": 100,
+      "edges": 148,
+      "built": 148
+    },
+    "dense": {
+      "nodes": 130,
+      "edges": 182,
+      "extra": 34
+    }
+  },
+  "viewFrames": {
+    "n": 440,
+    "median": 0.1,
+    "p95": 0.2,
+    "max": 0.6
+  },
+  "shape": {
+    "live": {
+      "n": 180,
+      "median": 2,
+      "p95": 3,
+      "max": 4.5
+    },
+    "settleLocal": {
+      "n": 20,
+      "median": 0.2,
+      "p95": 8.9,
+      "max": 8.9
+    },
+    "settleRoute": {
+      "n": 20,
+      "median": 106.4,
+      "p95": 125.7,
+      "max": 125.7
+    },
+    "settleWall": {
+      "n": 20,
+      "median": 114,
+      "p95": 134,
+      "max": 134
+    },
+    "gestureWall": {
+      "n": 20,
+      "median": 398,
+      "p95": 565,
+      "max": 565
+    },
+    "solves": 9200,
+    "overBudget": [
+      125.7,
+      109.6,
+      109.1,
+      107.6,
+      107.6,
+      106.4,
+      106.5,
+      106.6,
+      106.6,
+      106,
+      106.1,
+      105.1,
+      104.7,
+      106.8,
+      104.8,
+      105.2,
+      103.7,
+      104.7,
+      104.1,
+      105.2
+    ]
+  },
+  "resize": {
+    "live": {
+      "n": 160,
+      "median": 1.9,
+      "p95": 2.2,
+      "max": 3
+    },
+    "settleLocal": {
+      "n": 20,
+      "median": 0.1,
+      "p95": 11.5,
+      "max": 11.5
+    },
+    "settleRoute": {
+      "n": 20,
+      "median": 105.1,
+      "p95": 113.6,
+      "max": 113.6
+    },
+    "settleWall": {
+      "n": 20,
+      "median": 114,
+      "p95": 124,
+      "max": 124
+    },
+    "gestureWall": {
+      "n": 20,
+      "median": 402,
+      "p95": 443,
+      "max": 443
+    },
+    "solves": 9160,
+    "overBudget": [
+      113.6,
+      106.7,
+      104.3,
+      105.2,
+      105.1,
+      106,
+      104.9,
+      105.8,
+      104,
+      104.9,
+      106.4,
+      104.7,
+      104.1,
+      105.1,
+      104.9,
+      105.8,
+      106.5,
+      104.8,
+      104.9,
+      106.5
+    ]
+  },
+  "segment": {
+    "live": {
+      "n": 180,
+      "median": 1.5,
+      "p95": 1.7,
+      "max": 2
+    },
+    "settleLocal": {
+      "n": 20,
+      "median": 0.2,
+      "p95": 8.2,
+      "max": 8.2
+    },
+    "settleRoute": {
+      "n": 20,
+      "median": 79.6,
+      "p95": 81,
+      "max": 81
+    },
+    "settleWall": {
+      "n": 20,
+      "median": 87,
+      "p95": 97,
+      "max": 97
+    },
+    "gestureWall": {
+      "n": 20,
+      "median": 380,
+      "p95": 465,
+      "max": 465
+    },
+    "solves": 6080,
+    "overBudget": []
+  },
+  "nudge": {
+    "perKeystroke": {
+      "n": 10,
+      "median": 1.7,
+      "p95": 90.5,
+      "max": 90.5
+    },
+    "runEndRouteMs": 93.8
+  },
+  "benches": {
+    "routeAll": {
+      "n": 5,
+      "median": 78.3,
+      "p95": 79.9,
+      "max": 79.9
+    },
+    "exportSvg": {
+      "n": 5,
+      "median": 2,
+      "p95": 2.2,
+      "max": 2.2
+    }
+  },
+  "routeProfile": {
+    "edges": 148,
+    "perEdge": {
+      "p50": 0.1,
+      "p95": 0.2,
+      "max": 0.6,
+      "sum": 10.3
+    },
+    "fullSolve": 79.1,
+    "ratio": 7.68,
+    "routeEdgeCalls": 296,
+    "passes": 2,
+    "segGridRebuilds": 4,
+    "segGridMs": 0.2,
+    "routeConflicts": 1,
+    "routeConflictsMs": 0.2
+  },
+  "dense": {
+    "routeAll": {
+      "n": 1,
+      "median": 231.8,
+      "p95": 231.8,
+      "max": 231.8
+    },
+    "drag": {
+      "n": 90,
+      "median": 23.5,
+      "p95": 28,
+      "max": 28.6
+    },
+    "settle": {
+      "n": 10,
+      "median": 0.3,
+      "p95": 0.9,
+      "max": 0.9
+    },
+    "settleRoute": {
+      "n": 10,
+      "median": 224.2,
+      "p95": 233.7,
+      "max": 233.7
+    }
+  }
+}

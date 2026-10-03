@@ -1,0 +1,87 @@
+{
+  "name": "routing-branches",
+  "description": "An explicit shared bus, with an independent reciprocal pair below it. The two branch routes should share only their declared trunk.",
+  "doc": {
+    "version": 3,
+    "title": "Shared branches and reciprocal lanes",
+    "nodes": {
+      "root": {
+        "id": "root",
+        "text": "Decision",
+        "type": "decision",
+        "x": 30,
+        "y": 172,
+        "w": 140,
+        "h": 80
+      },
+      "top": {
+        "id": "top",
+        "text": "Path A",
+        "type": "rect",
+        "x": 430,
+        "y": 72,
+        "w": 140,
+        "h": 56
+      },
+      "bottom": {
+        "id": "bottom",
+        "text": "Path B",
+        "type": "rect",
+        "x": 430,
+        "y": 302,
+        "w": 140,
+        "h": 56
+      },
+      "left": {
+        "id": "left",
+        "text": "Client",
+        "type": "rect",
+        "x": 30,
+        "y": 502,
+        "w": 140,
+        "h": 56
+      },
+      "right": {
+        "id": "right",
+        "text": "Service",
+        "type": "rect",
+        "x": 430,
+        "y": 502,
+        "w": 140,
+        "h": 56
+      }
+    },
+    "edges": {
+      "a": {
+        "id": "a",
+        "src": "root",
+        "dst": "top",
+        "route": "orthogonal",
+        "arrow": "solid",
+        "label": "Yes"
+      },
+      "b": {
+        "id": "b",
+        "src": "root",
+        "dst": "bottom",
+        "route": "orthogonal",
+        "arrow": "solid",
+        "label": "No"
+      },
+      "request": {
+        "id": "request",
+        "src": "left",
+        "dst": "right",
+        "route": "orthogonal",
+        "arrow": "solid"
+      },
+      "response": {
+        "id": "response",
+        "src": "right",
+        "dst": "left",
+        "route": "orthogonal",
+        "arrow": "solid"
+      }
+    }
+  }
+}

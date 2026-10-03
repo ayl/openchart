@@ -1,0 +1,107 @@
+{
+  "when": "2026-09-22T19:28:20.051Z",
+  "fixtures": {
+    "representative": {
+      "nodes": 100,
+      "edges": 148,
+      "built": 148
+    },
+    "dense": {
+      "nodes": 130,
+      "edges": 182,
+      "extra": 34
+    }
+  },
+  "viewOnly": {
+    "edge": 0,
+    "all": 0
+  },
+  "shapeDrag": {
+    "label": "shape drag",
+    "solves": 460,
+    "routeMs": 272.9,
+    "calls": 5180,
+    "live": {
+      "n": 11,
+      "median": 3,
+      "p95": 4.4,
+      "max": 4.4
+    },
+    "settle": {
+      "n": 3,
+      "median": 33,
+      "max": 286
+    }
+  },
+  "resize": null,
+  "segDrag": null,
+  "routeAll_full_multi_pass": {
+    "n": 5,
+    "median": 229.3,
+    "p95": 238.7,
+    "max": 238.7
+  },
+  "render_after_reroute": {
+    "n": 5,
+    "median": 0.3,
+    "p95": 0.4,
+    "max": 0.4
+  },
+  "export_svg_build": {
+    "n": 5,
+    "median": 2.1,
+    "p95": 2.3,
+    "max": 2.3
+  },
+  "nudgeRun": {
+    "n": 1,
+    "median": 1,
+    "p95": 1,
+    "max": 10
+  },
+  "edgeSolveProfile": {
+    "n": 148,
+    "p50": 0.2,
+    "p95": 0.3,
+    "max": 0.4,
+    "sum": 27.2
+  },
+  "denseRouteAll": {
+    "n": 1,
+    "median": 401,
+    "p95": 401,
+    "max": 401
+  },
+  "denseDrag": {
+    "label": "dense drag",
+    "solves": 5728,
+    "routeMs": 4051.2,
+    "calls": 13477,
+    "live": {
+      "n": 18,
+      "median": 46.9,
+      "p95": 440,
+      "max": 440
+    },
+    "settle": {
+      "n": 2,
+      "median": 424,
+      "max": 424
+    }
+  },
+  "targets": [
+    [
+      "pan/zoom/selection trigger zero route solves",
+      true
+    ],
+    [
+      "representative live drag p95 painted-frame work <= 33ms",
+      true
+    ],
+    [
+      "representative release-to-settled median <= 100ms",
+      true
+    ]
+  ],
+  "missed": 0
+}

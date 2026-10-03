@@ -1,0 +1,10 @@
+const { environment, setup } = require('./harness.cjs');
+const e = environment();
+setup(e);
+e.run("globalThis.__calls=[]; const oh=hint; hint=function(m){globalThis.__calls.push(String(m)); return oh(m);};");
+e.run("transact(() => { a.x = 240; }, 'move Process');");
+e.run("undo();");
+e.run("redo();");
+console.log("calls:", e.run("JSON.stringify(globalThis.__calls)"));
+console.log("histLabels:", e.run("JSON.stringify(historyLabels)"));
+console.log("futLabels:", e.run("JSON.stringify(futureLabels)"));

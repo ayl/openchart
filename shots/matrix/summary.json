@@ -1,0 +1,115 @@
+{
+  "when": "2026-09-22T18:13:50.219Z",
+  "selftest": false,
+  "passed": 25,
+  "failed": 0,
+  "results": [
+    {
+      "what": "arrow-clearance zoom 0.5 rendered",
+      "ok": true
+    },
+    {
+      "what": "arrow-clearance zoom 1 rendered",
+      "ok": true
+    },
+    {
+      "what": "arrow-clearance zoom 2 rendered",
+      "ok": true
+    },
+    {
+      "what": "arrow-clearance: zoom/selection/export-preview do not mutate the document",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "what": "diamond-attachments zoom 0.5 rendered",
+      "ok": true
+    },
+    {
+      "what": "diamond-attachments zoom 1 rendered",
+      "ok": true
+    },
+    {
+      "what": "diamond-attachments zoom 2 rendered",
+      "ok": true
+    },
+    {
+      "what": "diamond-attachments: zoom/selection/export-preview do not mutate the document",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "what": "ports-crowded zoom 0.5 rendered",
+      "ok": true
+    },
+    {
+      "what": "ports-crowded zoom 1 rendered",
+      "ok": true
+    },
+    {
+      "what": "ports-crowded zoom 2 rendered",
+      "ok": true
+    },
+    {
+      "what": "ports-crowded: zoom/selection/export-preview do not mutate the document",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "what": "ports-opposite zoom 0.5 rendered",
+      "ok": true
+    },
+    {
+      "what": "ports-opposite zoom 1 rendered",
+      "ok": true
+    },
+    {
+      "what": "ports-opposite zoom 2 rendered",
+      "ok": true
+    },
+    {
+      "what": "ports-opposite: zoom/selection/export-preview do not mutate the document",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "what": "reciprocal zoom 0.5 rendered",
+      "ok": true
+    },
+    {
+      "what": "reciprocal zoom 1 rendered",
+      "ok": true
+    },
+    {
+      "what": "reciprocal zoom 2 rendered",
+      "ok": true
+    },
+    {
+      "what": "reciprocal: zoom/selection/export-preview do not mutate the document",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "what": "shared-node-overlap zoom 0.5 rendered",
+      "ok": true
+    },
+    {
+      "what": "shared-node-overlap zoom 1 rendered",
+      "ok": true
+    },
+    {
+      "what": "shared-node-overlap zoom 2 rendered",
+      "ok": true
+    },
+    {
+      "what": "shared-node-overlap: zoom/selection/export-preview do not mutate the document",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "what": "sentinel document unchanged (separate origin)",
+      "ok": true,
+      "detail": ""
+    }
+  ]
+}

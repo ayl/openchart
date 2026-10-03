@@ -1,0 +1,76 @@
+{
+  "name": "routing-reciprocal-hub",
+  "description": "Synthetic Continuum-like hub: outgoing upper flow, incoming lower flow, plus a reciprocal connection. Attachment ordering must keep directions clear.",
+  "doc": {
+    "version": 3,
+    "title": "Hub flow directions",
+    "nodes": {
+      "hub": {
+        "id": "hub",
+        "text": "Hub",
+        "type": "rect",
+        "x": 100,
+        "y": 250,
+        "w": 200,
+        "h": 60
+      },
+      "up": {
+        "id": "up",
+        "text": "Upper service",
+        "type": "rect",
+        "x": 500,
+        "y": 40,
+        "w": 140,
+        "h": 56
+      },
+      "down": {
+        "id": "down",
+        "text": "Lower service",
+        "type": "rect",
+        "x": 500,
+        "y": 440,
+        "w": 140,
+        "h": 56
+      },
+      "west": {
+        "id": "west",
+        "text": "Client",
+        "type": "rect",
+        "x": -240,
+        "y": 250,
+        "w": 140,
+        "h": 56
+      }
+    },
+    "edges": {
+      "out": {
+        "id": "out",
+        "src": "hub",
+        "dst": "up",
+        "route": "orthogonal",
+        "arrow": "solid"
+      },
+      "incoming": {
+        "id": "incoming",
+        "src": "down",
+        "dst": "hub",
+        "route": "orthogonal",
+        "arrow": "solid"
+      },
+      "request": {
+        "id": "request",
+        "src": "west",
+        "dst": "hub",
+        "route": "orthogonal",
+        "arrow": "solid"
+      },
+      "response": {
+        "id": "response",
+        "src": "hub",
+        "dst": "west",
+        "route": "orthogonal",
+        "arrow": "solid"
+      }
+    }
+  }
+}
