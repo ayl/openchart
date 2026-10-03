@@ -4,8 +4,9 @@ A Lucidchart-inspired, local-first diagram editor in one self-contained `index.h
 No build step, server, runtime dependencies, account, or network connection is required.
 
 Open **index.html** in a modern browser, or serve this folder with any static web server.
+A hosted copy is available at <https://ayl.github.io/openchart/>.
 
-## New: navigation, dark mode, and build sequences
+## Highlights
 
 - Two-finger trackpad scrolling pans; pinch or Ctrl/⌘ + wheel zooms around the pointer. Touchscreen pinch supports simultaneous pan/zoom without accidentally placing objects. Hold Ctrl/⌘ during a move or resize to bypass snapping.
 - **Settings → Editor theme → System / Light / Dark** changes the editor chrome only. Paper, saved diagram colors, and exports remain unchanged.
@@ -16,9 +17,7 @@ Open **index.html** in a modern browser, or serve this folder with any static we
 
 Stage-enabled diagrams use JSON **version 4** and need this app version to reopen. Older version 2/3 diagrams still load without changing their appearance; diagrams with no stages continue using version 3. Stage membership, ordering, and names are undoable; preview, theme, and navigation are not document edits.
 
-See [REPAIR_REPORT_PASS8.md](REPAIR_REPORT_PASS8.md) for feature implementation, [REPAIR_REPORT_PASS9.md](REPAIR_REPORT_PASS9.md) for pinch/connector fixes, and [REPAIR_REPORT_PASS10.md](REPAIR_REPORT_PASS10.md) for the directional quick-create and connector audit. Live browser/trackpad/IME qualification is still pending; do not interpret automated event tests as hardware acceptance.
-
-Connector routing now scores bends and label clearance consistently, separates independent duplicate flows, and distributes crowded automatic attachments across suitable sides using the full large-arrowhead footprint. Explicit sides and manual bends remain yours; large arrowheads and the 2px box gap are unchanged. Shared trunks no longer hide unrelated downstream crossings, and hidden connectors no longer influence visible route costs. See [REPAIR_REPORT_PASS11.md](REPAIR_REPORT_PASS11.md) for the implementation, 387-test result, new fixtures, and remaining visual-review limits.
+Connector routing scores bends and label clearance consistently, separates independent duplicate flows, and distributes crowded automatic attachments across suitable sides using the full large-arrowhead footprint. Explicit sides and manual bends remain yours; large arrowheads and the 2px box gap are unchanged.
 
 ## Editor
 
@@ -108,8 +107,6 @@ and PDF page size (fit-to-content or A4/Letter in either orientation). The previ
 exact SVG the download produces. The document inspector lists quality checks — text
 overflow, overlapping labels or arrowheads, unintended shape overlaps, cramped arrowheads —
 which select the offending object when clicked and never alter the diagram.
-`node visual-check.mjs` captures the fixture matrix at 50/100/200% zoom and
-pixel-compares it against approved baselines under `shots/repair-pass2/matrix/`.
 
 ## Shortcuts
 
@@ -158,58 +155,46 @@ dimension of 8192 pixels. SVG preserves vector geometry.
 Run the dependency-free regression suite with Node.js 22 or newer:
 
 ```sh
-node --test tests/editor.test.cjs
-node --test tests/fixtures.test.cjs
+node --test tests/*.test.cjs
 ```
 
 The tests execute the actual embedded application script with a small DOM adapter
-(`tests/harness.cjs`, shared by both suites). They cover document migration/validation,
-rendering/export serialization, undo/redo, gesture cancellation, connector creation and
-routing, layers and stacking, nested containers, grouping/duplication, keyboard actions,
-alignment/match/distribute, tidy selection, the appearance model (themes, style defaults,
-copy/paste style, typography, contrast-aware text color), per-shape text regions and
-connector labels, the creation workflow (quick-create, shape picker, replace shape,
-recents, fit-to-contents, selection-through), the stable inspector, the export preview
-(scope, margins, PNG scale, PDF page sizes), the quality-check diagnostics, and the
-derived route-result contract, plus persistence.
+(`tests/harness.cjs`). They cover document migration/validation, rendering/export
+serialization, undo/redo, gesture cancellation, connector creation and routing,
+layers and stacking, nested containers, grouping/duplication, keyboard actions,
+alignment/match/distribute, tidy selection, the appearance model (themes, style
+defaults, copy/paste style, typography, contrast-aware text color), per-shape text
+regions and connector labels, the creation workflow (quick-create, shape picker,
+replace shape, recents, fit-to-contents, selection-through), the stable inspector,
+the export preview (scope, margins, PNG scale, PDF page sizes), the quality-check
+diagnostics, the derived route-result contract, and persistence.
 
-`tests/fixtures.test.cjs` loads reproduction documents from `tests/fixtures/` (saved in
-the application's own format by `tests/make-fixtures.cjs`) and checks route invariants —
-finite coordinates, continuity, orthogonality, zero-length segments, backtracking, shape
-interiors, port separation — plus target behaviors for ordered attachment ports,
-reciprocal connectors, diamond attachments, and arrowhead clearance. Current findings
-and remaining gaps are summarized in `tests/FIXTURE_REPORT.md`.
+`tests/fixtures.test.cjs` loads reproduction documents from `tests/fixtures/` and
+checks route invariants — finite coordinates, continuity, orthogonality, zero-length
+segments, backtracking, shape interiors, port separation — plus target behaviors for
+ordered attachment ports, reciprocal connectors, diamond attachments, and arrowhead
+clearance.
 
 These are logic and simulated-DOM checks, not real-browser visual tests.
-`node visual-check.mjs` is fully isolated: it spawns its own disposable headless Chrome
-(`CHROME_PATH` overrides the binary) and serves the app from disk on ephemeral ports, so
-it never touches your browser profile or an external server. It asserts each fixture's
-identity after load, captures the fixture matrix at 50/100/200% zoom plus selected and
-export-preview states, and compares every screenshot's decoded pixels against approved
-baselines (tolerance documented in the script; a missing baseline is reported as pending,
-never as a pass; `--approve` promotes candidates explicitly after review and never
-promotes the tampered negative-control capture, which must fail the comparison). Diff
-images and metrics are written next to the candidates. Pass-2 artifacts live under
-`shots/repair-pass2/`; the pass-1 `shots/matrix/` tree is retained as history.
-The run also verifies localStorage isolation with a sentinel document in a second origin
-and exits nonzero on any drift. `--selftest` proves the harness detects injected changes.
-Manual browser QA remains for native touch behavior, file downloads, and cross-browser
-appearance. The repair-pass browser checks live in `browser-repair-check.mjs` (same
-isolation model; also exercises real pointer input and inspects the exported SVG, PNG
-rasterization — an opaque blank PNG cannot pass — and the PDF print document, which is
-reported as constructed, not as verified output); evidence is under `shots/repair/` and
-the write-ups are `REPAIR_REPORT.md` (pass 1) and `REPAIR_REPORT_PASS2.md` (pass 2).
+`node visual-check.mjs` spawns its own disposable headless Chrome (`CHROME_PATH`
+overrides the binary), serves the app from disk on ephemeral ports, captures the
+fixture matrix at several zoom levels plus selected and export-preview states, and
+compares every screenshot's decoded pixels against approved baselines under `shots/`.
+A missing baseline is reported as pending, never as a pass; `--approve` promotes
+candidates explicitly after review. The run also verifies localStorage isolation
+with a sentinel document in a second origin and exits nonzero on any drift.
+`node browser-repair-check.mjs` uses the same isolation model and exercises real
+pointer input and the exported SVG/PNG/PDF outputs in a real browser.
 
-Rendering performance is measured by `node perf-check.mjs` (isolated browser, JSON output
-plus `shots/repair-pass2/perf.json`) on two committed fixtures: a representative
-100-node / 148-edge grid (90 row-chain + 58 column-chain edges) and a denser
+Rendering performance is measured by `node perf-check.mjs` (isolated browser, JSON
+output under `shots/`) on two committed fixtures: a representative 100-node / 148-edge grid (90 row-chain + 58 column-chain edges) and a denser
 130-node / 182-edge variant with a deliberately overlapping 30-node cluster benchmarked
 separately. Pan, zoom, and selection-only repaints issue zero route solves; on the
 representative fixture live drag frames cost ~3 ms at the 95th percentile and
 release-to-settled lands around 33 ms at the median. The full-quality multi-pass solve
 that the correctness contract runs when a gesture commits right after a geometry-changing
-frame remains the dominant cost (~230 ms representative, ~420 ms dense; dense live-drag
-p95 ≈ 440 ms) — see the honest caveats in `REPAIR_REPORT_PASS2.md` (P01).
+frame remains the dominant cost; the tool records measured timings and pass/miss gates
+honestly in its JSON output.
 
 ## Scope and remaining limitations
 
